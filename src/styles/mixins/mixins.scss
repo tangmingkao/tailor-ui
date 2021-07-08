@@ -1,0 +1,32 @@
+$namespace:'tailor-';
+
+@mixin blockquote($block) {
+    // tailor-
+    $blockName: $namespace + $block !global;
+    .#{$blockName} {
+        @content;
+    }
+}
+@mixin status($color) {
+    @each $key,$value in $color {
+        &.#{$blockName}-#{$key}{
+            background:#{$value};
+        }
+    }
+}
+@mixin statusChild($color) {
+    @each $key,$value in $color {
+        .#{$blockName}-#{$key}{
+            background-color:#{$value};
+        }
+    }
+}
+
+@mixin statusWave($wave) {
+    @each $key,$value in $wave {
+        .#{$blockName}-#{$key}{
+            -webkit-animation: #{$value} 1.2s infinite;
+            animation: #{$value} 1.2s infinite;
+        }
+    }
+}

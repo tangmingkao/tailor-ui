@@ -1,0 +1,88 @@
+@import "./common/_var.scss"; // 全局的样式
+@import "./mixins/mixins.scss"; // 方法
+
+$color-list: (
+    primary: $primary,
+    success: $success,
+    info: $info,
+    warning: $warning,
+    danger: $danger,
+);
+$wave-list: (
+    animate1: $animate1,
+    animate2: $animate2,
+);
+@include blockquote(wave-loading) {
+    margin: 0 auto;
+    height: 40px;
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include statusChild($color-list);
+    @include statusWave($wave-list);
+    .loading-item {
+        width: 4px;
+        height: 40px;
+    }
+}
+.loading-item:nth-child(8) {
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+.loading-item:nth-child(7) {
+    -webkit-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+}
+.loading-item:nth-child(6) {
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+}
+.loading-item:nth-child(5) {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+.loading-item:nth-child(4) {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+.loading-item:nth-child(3) {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+.loading-item:nth-child(2) {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+@-webkit-keyframes animate1 {
+    50% {
+        -ms-transform: $wave1;
+        -webkit-transform: $wave1;
+        transform: $wave1;
+    }
+}
+
+@keyframes animate1 {
+    50% {
+        -ms-transform: $wave1;
+        -webkit-transform: $wave1;
+        transform: $wave1;
+    }
+}
+
+@-webkit-keyframes animate2 {
+    50% {
+        -ms-transform: $wave2;
+        -webkit-transform: $wave2;
+        transform: $wave2;
+    }
+}
+
+@keyframes animate2 {
+    50% {
+        -ms-transform: $wave2;
+        -webkit-transform: $wave2;
+        transform: $wave2;
+    }
+}

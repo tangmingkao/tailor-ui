@@ -1,4 +1,7 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
+import tailorUI from './packages/index';
 
-createApp(App).mount('#app')
+const app = createApp(App);
+app.use(tailorUI);
+app.mount('#app');
